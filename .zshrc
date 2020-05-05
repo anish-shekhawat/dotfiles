@@ -8,8 +8,8 @@
 source /etc/profile
 # source ~/.zsh/zsh-git/zshrc.sh
 # PROMPT='%B%m%~%b $(git_super_status) %# '
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
+source ~/.zsh/.zfunctions/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/.zfunctions/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
