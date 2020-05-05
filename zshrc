@@ -8,8 +8,8 @@
 source /etc/profile
 # source ~/.zsh/zsh-git/zshrc.sh
 # PROMPT='%B%m%~%b $(git_super_status) %# '
-source ~/.zsh/.zfunctions/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.zsh/.zfunctions/zsh-history-substring-search/zsh-history-substring-search.zsh
+source ~/.zsh/zfunctions/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/zfunctions/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
@@ -40,7 +40,7 @@ function gllist {
 [ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && source "$HOME/.scm_breeze/scm_breeze.sh"
 
 # Settings for Spaceship prompt
-fpath=( "$HOME/.zfunctions" $fpath )
+fpath=( "$HOME/zfunctions" $fpath )
 autoload -U promptinit; promptinit
 prompt spaceship
 
