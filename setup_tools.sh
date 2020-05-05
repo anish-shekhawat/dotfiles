@@ -9,3 +9,4 @@ ln -sf "$HOME/tools/spaceship-prompt/spaceship.zsh" "$HOME/.zfunctions/prompt_sp
 
 # Copy .zshrc
 cp .zshrc $HOME/.zshrc
+cp .zshalias $HOME/.zsh/zshalias

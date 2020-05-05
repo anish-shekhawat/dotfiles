@@ -10,7 +10,6 @@ source /etc/profile
 # PROMPT='%B%m%~%b $(git_super_status) %# '
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
-alias tmux="TERM=xterm-256color tmux"
 
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
@@ -18,34 +17,18 @@ bindkey '^[[B' history-substring-search-down
 # unalias run-help
 autoload run-help
 
-alias ls="ls --group-directories-first --color=auto"
-# Some tmux-related shell aliases
+# load aliases
+if [ -f ~/.zsh/zshalias ]; then
+    source ~/.zsh/zshalias
+else
+    print "404: ~/.zsh/zshalias not found."
+fi
 
-# Attaches tmux to the last session; creates a new session if none exists.
-alias t='tmux attach-session'
-
-# Attaches tmux to a session (example: ta portal)
-alias ta='tmux a -t'
-
-# Creates a new session
-alias tn='tmux new -s'
-
-# Lists all ongoing sessions
-alias tl='tmux list-sessions'
-
-#rg alias to exlude certain directories and ignore case
-alias rg='rg --smart-case -g "!linux*"'
-
-#rg alias to search for file names
-alias rgf='rg --files -g'
-
-# Directory navigation.
-alias -- -='cd -'
-alias ..='cd ..'
-alias ...='..; ..'
-alias ..3='..2; ..'
-alias ..4='..3; ..'
-alias ..5='..4; ..'
+if [ -f ~/.zsh/machine_alias ]; then
+    source ~/.zsh/machine_alias
+else
+    print "404: ~/.zsh/machine_alias not found."
+fi
 
 alias fixssh='eval $(tmux showenv -s SSH_AUTH_SOCK)'
 
@@ -54,7 +37,7 @@ function gllist {
   git for-each-ref --sort=-committerdate refs/ --format="%(color:green)%(committerdate:iso8601) %(color:red)%(refname:short) %(color:yellow)%(authorname)%(color:reset) %(contents:subject)" | sed "s/refs\/heads\///g" | sed ${1-15}q
 }
 
-[ -s "/home/anishss/.scm_breeze/scm_breeze.sh" ] && source "/home/anishss/.scm_breeze/scm_breeze.sh"
+[ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && source "$HOME/.scm_breeze/scm_breeze.sh"
 
 # Settings for Spaceship prompt
 fpath=( "$HOME/.zfunctions" $fpath )
