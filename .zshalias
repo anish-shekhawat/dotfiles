@@ -1,0 +1,33 @@
+# zsh alias
+
+# Tmux alias
+alias tmux="TERM=xterm-256color tmux"
+
+alias ls="ls --group-directories-first --color=auto"
+# Some tmux-related shell aliases
+
+# Attaches tmux to the last session; creates a new session if none exists.
+alias t='tmux attach-session'
+
+# Attaches tmux to a session (example: ta portal)
+alias ta='tmux a -t'
+
+# Creates a new session
+alias tn='tmux new -s'
+
+# Lists all ongoing sessions
+alias tl='tmux list-sessions'
+
+#rg alias to exlude certain directories and ignore case
+alias rg='rg --smart-case -g "!linux*"'
+
+#rg alias to search for file names
+alias rgf='rg --files -g'
+
+# Directory navigation.
+alias -- -='cd -'
+alias ..='cd ..'
+alias ...='..; ..'
+alias ..3='..2; ..'
+alias ..4='..3; ..'
+alias ..5='..4; ..'
