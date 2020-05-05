@@ -25,7 +25,7 @@ SPACESHIP_PROMPT_ORDER=(
 )
 
 # Copy .zsh files
-cp .zshrc $HOME/.zshrc
-cp .zshalias $HOME/.zsh/zshalias
+cp zshrc $HOME/.zshrc
+cp zshalias $HOME/.zsh/zshalias
 
 source $HOME/.zshrc
