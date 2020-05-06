@@ -5,9 +5,19 @@
 # options, key bindings, etc.
 #
 # Global Order: zshenv, zprofile, zshrc, zlogin
-source /etc/profile
-# source ~/.zsh/zsh-git/zshrc.sh
-# PROMPT='%B%m%~%b $(git_super_status) %# '
+# Load version control information
+autoload -Uz vcs_info
+precmd() { vcs_info }
+
+# Format the vcs_info_msg_0_ variable
+zstyle ':vcs_info:git:*' actionformats '%b'
+
+# Set up the prompt (with git branch name)
+setopt prompt_subst
+NEWLINE=$'\n'
+PROMPT='%{$fg_no_bold[yellow]%}%n %{$reset_color%}at %{$fg_bold[green]%}$NAMEANDROLE%{$reset_color%} in %{$fg_bold[cyan]%}%~%{$reset_color%} on %{$fg_no_bold[magenta]%}${vcs_info_msg_0_}%{$reset_color%}${NEWLINE}~ '
+
+# TODO: Add zsh-git
 source ~/.zsh/zfunctions/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zfunctions/zsh-history-substring-search/zsh-history-substring-search.zsh
 
@@ -40,9 +50,12 @@ function gllist {
 [ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && source "$HOME/.scm_breeze/scm_breeze.sh"
 
 # Settings for Spaceship prompt
-fpath=( "$HOME/zfunctions" $fpath )
-autoload -U promptinit; promptinit
-prompt spaceship
+fpath=( "$HOME/.zsh/zfunctions" $fpath )
+result=$(zsh --version | awk '{print $2}' | awk -F'.' '{s=($1 > 5 || ($1==5 && $2 > 1))?"1":"0"; print s}')
+if [ $result -gt "0" ]; then
+    autoload -U promptinit; promptinit
+    prompt spaceship
+fi
 
 SPACESHIP_GIT_STATUS_SHOW=false
 SPACESHIP_EXIT_CODE_SHOW=true
