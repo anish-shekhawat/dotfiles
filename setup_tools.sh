@@ -12,21 +12,9 @@ git clone https://github.com/zsh-users/zsh-history-substring-search $HOME/.zsh/z
 git clone https://github.com/denysdovhan/spaceship-prompt.git $HOME/.zsh/zfunctions/spaceship-prompt
 ln -sf "$HOME/.zsh/zfunctions/spaceship-prompt/spaceship.zsh" "$HOME/.zsh/zfunctions/prompt_spaceship_setup"
 
-SPACESHIP_GIT_STATUS_SHOW=false
-SPACESHIP_EXIT_CODE_SHOW=true
-
-SPACESHIP_PROMPT_ORDER=(
-  time          # Time stamps section
-  user          # Username section
-  dir           # Current directory section
-  host          # Hostname section
-  git           # Git section (git_branch + git_status)
-  exit_code     # Exit code section
-  exec_time     # Execution time of the last command
-)
-
 # Copy .zsh files
 ln -sf "$TOOLS/zshrc" "$HOME/.zshrc"
+ln -sf "$TOOLS/zshalias" "$HOME/.zsh/zshalias"
 ln -sf "$TOOLS/vimrc" "$HOME/.vimrc"
 ln -sf "$TOOLS/tmux.conf" "$HOME/.tmux.conf"
 
