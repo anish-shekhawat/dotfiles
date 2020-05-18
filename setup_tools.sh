@@ -12,6 +12,9 @@ git clone https://github.com/zsh-users/zsh-history-substring-search $HOME/.zsh/z
 git clone https://github.com/denysdovhan/spaceship-prompt.git $HOME/.zsh/zfunctions/spaceship-prompt
 ln -sf "$HOME/.zsh/zfunctions/spaceship-prompt/spaceship.zsh" "$HOME/.zsh/zfunctions/prompt_spaceship_setup"
 
+# setup tmux
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 # Copy .zsh files
 ln -sf "$TOOLS/zshrc" "$HOME/.zshrc"
 ln -sf "$TOOLS/zshalias" "$HOME/.zsh/zshalias"
