@@ -51,7 +51,7 @@ function gllist {
 
 # Settings for Spaceship prompt
 fpath=( "$HOME/.zsh/zfunctions" $fpath )
-result=$(zsh --version | awk '{print $2}' | awk -F'.' '{s=($1 > 5 || ($1==5 && $2 > 1))?"1":"0"; print s}')
+result=$(zsh --version | awk '{print $2}' | awk -F'.' '{s=($1 > 5 || ($1==5 && $2 >= 1))?"1":"0"; print s}')
 if [ $result -gt "0" ]; then
     autoload -U promptinit; promptinit
     prompt spaceship
