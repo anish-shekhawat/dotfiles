@@ -1,5 +1,7 @@
 set backspace=indent,eol,start
-set hlsearch incsearch cursorline
+set incsearch
+set hlsearch
+set cursorline
 set nocompatible
 set number relativenumber
 set listchars=tab:→\ ,space:·,trail:•,eol:¶,precedes:«,extends:»
@@ -12,6 +14,9 @@ set autoindent
 set expandtab
 syntax on
 filetype plugin indent on
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
