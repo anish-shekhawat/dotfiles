@@ -68,4 +68,6 @@ SPACESHIP_PROMPT_ORDER=(
   git           # Git section (git_branch + git_status)
   exit_code     # Exit code section
   exec_time     # Execution time of the last command
+  line_sep      # Line break
+  char          # Prompt character
 )
