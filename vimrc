@@ -4,7 +4,7 @@ set hlsearch
 set cursorline
 set nocompatible
 set number relativenumber
-set listchars=tab:→\ ,space:·,trail:•,eol:¶,precedes:«,extends:»
+set listchars=tab:→\ ,trail:•,eol:¶,precedes:«,extends:»
 set ttymouse=xterm2
 set mouse=i
 set showmatch ignorecase smartcase
